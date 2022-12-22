@@ -52,7 +52,8 @@ class ViewController: UIViewController {
         case 0:
             viewController = FirstAnimationViewController()
         case 1:
-            print("second tapped")
+            let st = UIStoryboard(name: "ItemsViewController", bundle: nil)
+            viewController = st.instantiateViewController(withIdentifier: "ItemsViewController")
         default:
             return
         }

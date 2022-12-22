@@ -14,6 +14,13 @@
 		1834289F295231400097C8E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1834289E295231400097C8E9 /* Assets.xcassets */; };
 		183428A2295231400097C8E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183428A0295231400097C8E9 /* LaunchScreen.storyboard */; };
 		183428AA295233450097C8E9 /* FirstAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428A9295233450097C8E9 /* FirstAnimationViewController.swift */; };
+		183428AE29546D630097C8E9 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428AC29546D630097C8E9 /* ItemsViewController.swift */; };
+		183428B129546D8C0097C8E9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428B029546D8C0097C8E9 /* Item.swift */; };
+		183428B329546DEE0097C8E9 /* ItemsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428B229546DEE0097C8E9 /* ItemsTableView.swift */; };
+		183428B529546E7C0097C8E9 /* HorizontalItemSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428B429546E7C0097C8E9 /* HorizontalItemSlider.swift */; };
+		183428B7295477090097C8E9 /* ItemsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183428B6295477090097C8E9 /* ItemsViewController.storyboard */; };
+		183428B929547D520097C8E9 /* TapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428B829547D520097C8E9 /* TapGestureRecognizer.swift */; };
+		183428BB29547D8D0097C8E9 /* Selector.Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428BA29547D8D0097C8E9 /* Selector.Perform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		183428A1295231400097C8E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		183428A3295231400097C8E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183428A9295233450097C8E9 /* FirstAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAnimationViewController.swift; sourceTree = "<group>"; };
+		183428AC29546D630097C8E9 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		183428B029546D8C0097C8E9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		183428B229546DEE0097C8E9 /* ItemsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableView.swift; sourceTree = "<group>"; };
+		183428B429546E7C0097C8E9 /* HorizontalItemSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalItemSlider.swift; sourceTree = "<group>"; };
+		183428B6295477090097C8E9 /* ItemsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemsViewController.storyboard; sourceTree = "<group>"; };
+		183428B829547D520097C8E9 /* TapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizer.swift; sourceTree = "<group>"; };
+		183428BA29547D8D0097C8E9 /* Selector.Perform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selector.Perform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 		183428942952313F0097C8E9 /* AnimationsProject */ = {
 			isa = PBXGroup;
 			children = (
+				183428AB29546D400097C8E9 /* RayWanderlich */,
 				183428952952313F0097C8E9 /* AppDelegate.swift */,
 				183428972952313F0097C8E9 /* SceneDelegate.swift */,
 				183428992952313F0097C8E9 /* ViewController.swift */,
@@ -68,6 +83,20 @@
 				183428A9295233450097C8E9 /* FirstAnimationViewController.swift */,
 			);
 			path = AnimationsProject;
+			sourceTree = "<group>";
+		};
+		183428AB29546D400097C8E9 /* RayWanderlich */ = {
+			isa = PBXGroup;
+			children = (
+				183428B6295477090097C8E9 /* ItemsViewController.storyboard */,
+				183428AC29546D630097C8E9 /* ItemsViewController.swift */,
+				183428B029546D8C0097C8E9 /* Item.swift */,
+				183428B229546DEE0097C8E9 /* ItemsTableView.swift */,
+				183428B429546E7C0097C8E9 /* HorizontalItemSlider.swift */,
+				183428B829547D520097C8E9 /* TapGestureRecognizer.swift */,
+				183428BA29547D8D0097C8E9 /* Selector.Perform.swift */,
+			);
+			path = RayWanderlich;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +160,7 @@
 				183428A2295231400097C8E9 /* LaunchScreen.storyboard in Resources */,
 				1834289F295231400097C8E9 /* Assets.xcassets in Resources */,
 				1834289D2952313F0097C8E9 /* Main.storyboard in Resources */,
+				183428B7295477090097C8E9 /* ItemsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +172,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				183428AA295233450097C8E9 /* FirstAnimationViewController.swift in Sources */,
+				183428BB29547D8D0097C8E9 /* Selector.Perform.swift in Sources */,
+				183428B529546E7C0097C8E9 /* HorizontalItemSlider.swift in Sources */,
 				1834289A2952313F0097C8E9 /* ViewController.swift in Sources */,
+				183428B329546DEE0097C8E9 /* ItemsTableView.swift in Sources */,
+				183428AE29546D630097C8E9 /* ItemsViewController.swift in Sources */,
+				183428B929547D520097C8E9 /* TapGestureRecognizer.swift in Sources */,
 				183428962952313F0097C8E9 /* AppDelegate.swift in Sources */,
+				183428B129546D8C0097C8E9 /* Item.swift in Sources */,
 				183428982952313F0097C8E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
