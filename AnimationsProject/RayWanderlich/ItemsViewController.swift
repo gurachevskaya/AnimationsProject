@@ -81,6 +81,16 @@ private extension ItemsViewController {
             widthConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
+        
+        UIView.animate(
+            withDuration: 2 / 3, delay: 2,
+            animations: {
+                bottomConstraint.constant = imageView.frame.height
+                widthConstraint.constant = -50
+                self.view.layoutIfNeeded()
+            },
+            completion: { _ in imageView.removeFromSuperview() }
+        )
     }
     
     func transitionCloseMenu() {
