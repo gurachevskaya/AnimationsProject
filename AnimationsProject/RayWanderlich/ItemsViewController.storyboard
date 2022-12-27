@@ -72,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="menuButton" destination="IOq-Pr-fqH" id="Pu7-iQ-wcj"/>
+                        <outlet property="menuButtonTrailingConstraint" destination="yNV-0i-Atf" id="i8T-TW-QKb"/>
                         <outlet property="menuHeightConstraint" destination="vCC-PK-uyy" id="aih-ig-mss"/>
                         <outlet property="tableView" destination="tdH-ZN-xEy" id="EGT-co-MbI"/>
                         <outlet property="titleLabel" destination="OVl-Vy-Hss" id="KYJ-17-5qZ"/>
