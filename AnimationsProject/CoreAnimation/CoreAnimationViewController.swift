@@ -64,6 +64,8 @@ class CoreAnimationViewController: UIViewController {
         ).cgColor
         
         CATransaction.setCompletionBlock {
+            // applies the rotation animation is executed after the color fade animation’s transaction has been committed and popped off the stack
+            // using the default transaction, with the default animation duration of 0.25 seconds.
             var transform = self.colorLayer.affineTransform()
             transform = CGAffineTransformRotate(transform, .pi / 4)
             self.colorLayer.setAffineTransform(transform)
