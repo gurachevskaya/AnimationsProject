@@ -54,7 +54,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
     func changeColor() {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "backgroundColor"
-        animation.duration = 4
+//        animation.duration = 4 // don't need when use animation group
 
         // it’s possible to create animations that end on a different value than they begin. In that case, we would need to manually update the property value to match the last keyframe before we trigger the animation
         animation.values = [
@@ -64,7 +64,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
             UIColor.blue.cgColor
         ]
         
-        colorLayer.add(animation, forKey: nil)
+//        colorLayer.add(animation, forKey: nil) // don't need when use animation group
         
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 0, y: 150))
@@ -72,11 +72,16 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         
         let positionAnimation = CAKeyframeAnimation()
         positionAnimation.keyPath = "position"
-        positionAnimation.duration = 4.0
+//        positionAnimation.duration = 4.0
         positionAnimation.path = bezierPath.cgPath
         positionAnimation.rotationMode = .rotateAuto
         
-        colorLayer.add(positionAnimation, forKey: nil)
+        let animationGroup = CAAnimationGroup()
+        animationGroup.animations = [animation, positionAnimation]
+        animationGroup.duration = 4
+        
+        colorLayer.add(animationGroup, forKey: nil)
+//        colorLayer.add(positionAnimation, forKey: nil)
     }
     
     // MARK: CABasicAnimation
