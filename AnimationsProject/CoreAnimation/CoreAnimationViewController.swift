@@ -63,6 +63,12 @@ class CoreAnimationViewController: UIViewController {
             alpha: 1
         ).cgColor
         
+        CATransaction.setCompletionBlock {
+            var transform = self.colorLayer.affineTransform()
+            transform = CGAffineTransformRotate(transform, .pi / 4)
+            self.colorLayer.setAffineTransform(transform)
+        }
+        
         CATransaction.commit()
     }
 }
