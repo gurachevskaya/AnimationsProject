@@ -54,7 +54,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
     func changeColor() {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "backgroundColor"
-        animation.duration = 2
+        animation.duration = 4
 
         // it’s possible to create animations that end on a different value than they begin. In that case, we would need to manually update the property value to match the last keyframe before we trigger the animation
         animation.values = [
@@ -65,6 +65,17 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         ]
         
         colorLayer.add(animation, forKey: nil)
+        
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 0, y: 150))
+        bezierPath.addCurve(to: CGPoint(x: 300, y: 150), controlPoint1: CGPoint(x: 75, y: 0), controlPoint2: CGPoint(x: 225, y: 300))
+        
+        let positionAnimation = CAKeyframeAnimation()
+        positionAnimation.keyPath = "position"
+        positionAnimation.duration = 4.0
+        positionAnimation.path = bezierPath.cgPath
+        
+        colorLayer.add(positionAnimation, forKey: nil)
     }
     
     // MARK: CABasicAnimation
