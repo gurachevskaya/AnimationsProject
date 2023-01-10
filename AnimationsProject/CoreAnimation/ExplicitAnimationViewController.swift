@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExplicitAnimationViewController: UIViewController {
+class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
     var colorLayer = CALayer()
     lazy var layerView: UIView = {
         let view = UIView()
@@ -64,9 +64,13 @@ class ExplicitAnimationViewController: UIViewController {
         
         animation.toValue = color.cgColor
         
-        applyBasicAnimation(animation, toLayer: colorLayer)
+        //        applyBasicAnimation(animation, toLayer: colorLayer)
+
+        // using CAAnimation delegate
+        animation.delegate = self
+        colorLayer.add(animation, forKey: nil)
     }
-    
+     /*
     func applyBasicAnimation(_ animation: CABasicAnimation, toLayer layer: CALayer) {
         let neededLayer = layer.presentation() != nil ? layer.presentation() : layer
         animation.fromValue = neededLayer?.value(forKeyPath: animation.keyPath ?? "")
@@ -79,5 +83,14 @@ class ExplicitAnimationViewController: UIViewController {
         CATransaction.commit()
         
         layer.add(animation, forKey: nil)
+    }
+    */
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        let basicAnimation = anim as? CABasicAnimation
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        colorLayer.backgroundColor = basicAnimation?.toValue as! CGColor
+        CATransaction.commit()
     }
 }
