@@ -23,6 +23,7 @@
 		183428BB29547D8D0097C8E9 /* Selector.Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428BA29547D8D0097C8E9 /* Selector.Perform.swift */; };
 		183428BE296D78310097C8E9 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428BD296D78310097C8E9 /* TransactionViewController.swift */; };
 		183428C0296D89830097C8E9 /* PresentationLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428BF296D89830097C8E9 /* PresentationLayerViewController.swift */; };
+		183428C2296DB27A0097C8E9 /* ExplicitAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183428C1296DB27A0097C8E9 /* ExplicitAnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		183428BA29547D8D0097C8E9 /* Selector.Perform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selector.Perform.swift; sourceTree = "<group>"; };
 		183428BD296D78310097C8E9 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		183428BF296D89830097C8E9 /* PresentationLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLayerViewController.swift; sourceTree = "<group>"; };
+		183428C1296DB27A0097C8E9 /* ExplicitAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				183428BD296D78310097C8E9 /* TransactionViewController.swift */,
 				183428BF296D89830097C8E9 /* PresentationLayerViewController.swift */,
+				183428C1296DB27A0097C8E9 /* ExplicitAnimationViewController.swift */,
 			);
 			path = CoreAnimation;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				183428962952313F0097C8E9 /* AppDelegate.swift in Sources */,
 				183428B129546D8C0097C8E9 /* Item.swift in Sources */,
 				183428982952313F0097C8E9 /* SceneDelegate.swift in Sources */,
+				183428C2296DB27A0097C8E9 /* ExplicitAnimationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

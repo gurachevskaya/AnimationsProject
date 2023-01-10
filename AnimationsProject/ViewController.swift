@@ -30,11 +30,13 @@ class ViewController: UIViewController {
         let secondAnimationButton = UIButton()
         let thirdAnimationButton = UIButton()
         let fourthAnimationButton = UIButton()
+        let fifthAnimationButton = UIButton()
 
         buttonsStackView.addArrangedSubview(firstAnimationButton)
         buttonsStackView.addArrangedSubview(secondAnimationButton)
         buttonsStackView.addArrangedSubview(thirdAnimationButton)
         buttonsStackView.addArrangedSubview(fourthAnimationButton)
+        buttonsStackView.addArrangedSubview(fifthAnimationButton)
 
         buttonsStackView.arrangedSubviews.enumerated().forEach { index, view in
             let button = view as? UIButton
@@ -63,6 +65,8 @@ class ViewController: UIViewController {
             viewController = TransactionViewController()
         case 3:
             viewController = PresentationLayerViewController()
+        case 4:
+            viewController = ExplicitAnimationViewController()
         default:
             return
         }
