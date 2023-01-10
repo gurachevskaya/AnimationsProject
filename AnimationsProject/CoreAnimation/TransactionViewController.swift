@@ -1,5 +1,5 @@
 //
-//  CoreAnimationViewController.swift
+//  TransactionViewController.swift
 //  AnimationsProject
 //
 //  Created by Karina gurachevskaya on 10.01.23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoreAnimationViewController: UIViewController {
+class TransactionViewController: UIViewController {
     
     var colorLayer = CALayer()
     lazy var layerView: UIView = {

@@ -29,11 +29,13 @@ class ViewController: UIViewController {
         let firstAnimationButton = UIButton()
         let secondAnimationButton = UIButton()
         let thirdAnimationButton = UIButton()
+        let fourthAnimationButton = UIButton()
 
         buttonsStackView.addArrangedSubview(firstAnimationButton)
         buttonsStackView.addArrangedSubview(secondAnimationButton)
         buttonsStackView.addArrangedSubview(thirdAnimationButton)
-        
+        buttonsStackView.addArrangedSubview(fourthAnimationButton)
+
         buttonsStackView.arrangedSubviews.enumerated().forEach { index, view in
             let button = view as? UIButton
             button?.setTitle("\(index + 1) Animation", for: .normal)
@@ -58,7 +60,9 @@ class ViewController: UIViewController {
             let st = UIStoryboard(name: "ItemsViewController", bundle: nil)
             viewController = st.instantiateViewController(withIdentifier: "ItemsViewController")
         case 2:
-            viewController = CoreAnimationViewController()
+            viewController = TransactionViewController()
+        case 3:
+            viewController = PresentationLayerViewController()
         default:
             return
         }
