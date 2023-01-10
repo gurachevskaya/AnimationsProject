@@ -49,6 +49,25 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
 
     }
     
+    // MARK: CAKeyFramedAnimation
+    @objc
+    func changeColor() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "backgroundColor"
+        animation.duration = 2
+
+        animation.values = [
+            UIColor.blue.cgColor,
+            UIColor.red.cgColor,
+            UIColor.green.cgColor,
+            UIColor.blue.cgColor
+        ]
+        
+        colorLayer.add(animation, forKey: nil)
+    }
+    
+    // MARK: CABasicAnimation
+    /*
     @objc
     func changeColor() {
         
@@ -70,7 +89,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         animation.delegate = self
         colorLayer.add(animation, forKey: nil)
     }
-     /*
+     
     func applyBasicAnimation(_ animation: CABasicAnimation, toLayer layer: CALayer) {
         let neededLayer = layer.presentation() != nil ? layer.presentation() : layer
         animation.fromValue = neededLayer?.value(forKeyPath: animation.keyPath ?? "")
