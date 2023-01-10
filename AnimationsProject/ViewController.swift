@@ -28,8 +28,11 @@ class ViewController: UIViewController {
         
         let firstAnimationButton = UIButton()
         let secondAnimationButton = UIButton()
+        let thirdAnimationButton = UIButton()
+
         buttonsStackView.addArrangedSubview(firstAnimationButton)
         buttonsStackView.addArrangedSubview(secondAnimationButton)
+        buttonsStackView.addArrangedSubview(thirdAnimationButton)
         
         buttonsStackView.arrangedSubviews.enumerated().forEach { index, view in
             let button = view as? UIButton
@@ -54,6 +57,8 @@ class ViewController: UIViewController {
         case 1:
             let st = UIStoryboard(name: "ItemsViewController", bundle: nil)
             viewController = st.instantiateViewController(withIdentifier: "ItemsViewController")
+        case 2:
+            viewController = CoreAnimationViewController()
         default:
             return
         }
