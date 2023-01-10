@@ -47,6 +47,12 @@ class CoreAnimationViewController: UIViewController {
         colorLayer.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
         colorLayer.backgroundColor = UIColor.blue.cgColor
         
+        // add custom action
+        let transition = CATransition()
+        transition.type = .push
+        transition.subtype = .fromLeft
+        colorLayer.actions = ["backgroundColor": transition]
+        
         layerView.layer.addSublayer(colorLayer)
     }
     
@@ -63,13 +69,13 @@ class CoreAnimationViewController: UIViewController {
             alpha: 1
         ).cgColor
         
-        CATransaction.setCompletionBlock {
-            // applies the rotation animation is executed after the color fade animation’s transaction has been committed and popped off the stack
-            // using the default transaction, with the default animation duration of 0.25 seconds.
-            var transform = self.colorLayer.affineTransform()
-            transform = CGAffineTransformRotate(transform, .pi / 4)
-            self.colorLayer.setAffineTransform(transform)
-        }
+//        CATransaction.setCompletionBlock {
+//            // applies the rotation animation is executed after the color fade animation’s transaction has been committed and popped off the stack
+//            // using the default transaction, with the default animation duration of 0.25 seconds.
+//            var transform = self.colorLayer.affineTransform()
+//            transform = CGAffineTransformRotate(transform, .pi / 4)
+//            self.colorLayer.setAffineTransform(transform)
+//        }
         
         CATransaction.commit()
     }
