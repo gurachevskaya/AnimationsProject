@@ -74,6 +74,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         positionAnimation.keyPath = "position"
         positionAnimation.duration = 4.0
         positionAnimation.path = bezierPath.cgPath
+        positionAnimation.rotationMode = .rotateAuto
         
         colorLayer.add(positionAnimation, forKey: nil)
     }
