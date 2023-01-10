@@ -56,6 +56,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         animation.keyPath = "backgroundColor"
         animation.duration = 2
 
+        // it’s possible to create animations that end on a different value than they begin. In that case, we would need to manually update the property value to match the last keyframe before we trigger the animation
         animation.values = [
             UIColor.blue.cgColor,
             UIColor.red.cgColor,
@@ -83,6 +84,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         
         animation.toValue = color.cgColor
         
+        // without delegate
         //        applyBasicAnimation(animation, toLayer: colorLayer)
 
         // using CAAnimation delegate
@@ -105,6 +107,7 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
     }
     */
     
+    // using CAAnimation delegate
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         let basicAnimation = anim as? CABasicAnimation
         CATransaction.begin()
