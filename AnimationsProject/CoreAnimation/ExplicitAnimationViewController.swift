@@ -15,11 +15,19 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    lazy var button: UIButton = {
+    lazy var startButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemPink
-        button.setTitle("Change color", for: .normal)
+        button.setTitle("Start", for: .normal)
         button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    lazy var stopButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemPink
+        button.setTitle("Stop", for: .normal)
+        button.addTarget(self, action: #selector(stopAnimation), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -29,18 +37,24 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         view.backgroundColor = .gray
         
         view.addSubview(layerView)
-        view.addSubview(button)
-
+        view.addSubview(startButton)
+        view.addSubview(stopButton)
+        
         NSLayoutConstraint.activate([
             layerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             layerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             layerView.widthAnchor.constraint(equalToConstant: 200),
             layerView.heightAnchor.constraint(equalToConstant: 200),
             
-            button.widthAnchor.constraint(equalToConstant: 200),
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.topAnchor.constraint(equalTo: layerView.bottomAnchor, constant: 15),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            startButton.widthAnchor.constraint(equalToConstant: 200),
+            startButton.heightAnchor.constraint(equalToConstant: 50),
+            startButton.topAnchor.constraint(equalTo: layerView.bottomAnchor, constant: 15),
+            startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            stopButton.widthAnchor.constraint(equalToConstant: 200),
+            stopButton.heightAnchor.constraint(equalToConstant: 50),
+            stopButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: 15),
+            stopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         colorLayer.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
@@ -80,8 +94,13 @@ class ExplicitAnimationViewController: UIViewController, CAAnimationDelegate {
         animationGroup.animations = [animation, positionAnimation]
         animationGroup.duration = 4
         
-        colorLayer.add(animationGroup, forKey: nil)
+        colorLayer.add(animationGroup, forKey: "movingAnimation")
 //        colorLayer.add(positionAnimation, forKey: nil)
+    }
+    
+    @objc
+    func stopAnimation() {
+        colorLayer.removeAnimation(forKey: "movingAnimation")
     }
     
     // MARK: CABasicAnimation
